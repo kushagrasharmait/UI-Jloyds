@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Customer System App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app ="customerApp" ng-controller ="customerController">
+    
+
+    <div ng-if="orderStatus">
+<table class="table table-striped">
+    <tr>
+        <th>Company Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th><th>
+    </tr>
+    <tr ng-repeat="i in comapyList">
+            <td><input type="text" ng-model ="i.company"></td>
+            <td><input type="date" ng-model ="i.startDate"></td>
+            <td><input type="date" ng-model ="i.endDate"></td>
+           <td> <button type="button" class="btn btn-primary" ng-click="">Edit</button></td>
+    </tr>
+</table>
+
+    </div>
+
+    <div ng-if="userRegistration">
+          
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Company Name</span>
+            </div>
+                    <input type="text" class="form-control" placeholder="Company Name" aria-label="company" aria-describedby="basic-addon1" ng-model="newUser.company"> 
+                </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">firstName</span>
+            </div>
+                    <input type="text" class="form-control" placeholder="firstName" aria-label="firstName" aria-describedby="basic-addon1" ng-model="newUser.firstName"> 
+                </div>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">lastName</span>
+                  </div>
+                        <input type="text" class="form-control" placeholder="lastName" aria-label="lastName" aria-describedby="basic-addon1" ng-model="newUser.lastName"> 
+                    </div>
+                    <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">email</span>
+                      </div>
+                            <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1" ng-model="newUser.email"> 
+                        </div>
+                        <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Start Date</span>
+                          </div>
+                    <input type= "date" class="form-control" placeholder="25-09-2019" ng-model="newUser.startDate"> 
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">End Date</span>
+                        </div>
+                  <input type= "date" class="form-control" placeholder="25-09-2019" ng-model="newUser.endDate"> 
+                  </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" ng-click="registerUser()">Register</button>
+               </div>
+
+    </div>
+</body>
+</html>
